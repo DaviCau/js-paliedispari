@@ -7,11 +7,12 @@ console.log(parola);
 
 function palindromeCheck() {
     for (var i = 0; i < parolaLen; i++) {
+        console.log(parola[i], parola[parolaLen - 1 - i]);
         if (parola[i] != parola[parolaLen - 1 - i]) {
             return false;
         }
-        return true;
     }
+    return true;
 }
 
 if (palindromeCheck()) {
