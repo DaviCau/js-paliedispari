@@ -20,12 +20,19 @@ console.log(numeroScelto);
 var numeroComputer = randomNumber(1, 5);
 console.log(numeroComputer);
 
-var vinto = (isEven(numeroScelto, numeroComputer) && scelta == "pari") || (isEven(numeroScelto, numeroComputer) == false && scelta == "dispari");
-if (vinto) {
+var tipoSomma = "";
+if (isEven(numeroScelto, numeroComputer)) {
+    tipoSomma = "pari";
+} else {
+    tipoSomma = "dispari";
+}
+
+if (tipoSomma == scelta) {
     console.log("hai vinto");
 } else {
     console.log("hai perso");
 }
+
 
 function randomNumber(min, max) {
     var numero = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -34,8 +41,11 @@ function randomNumber(min, max) {
 
 function isEven(num1, num2) {
     var somma = num1 + num2;
+    console.log("somma", somma);
     if (somma % 2 == 0) {
+        console.log("la somma è pari");
         return true;
     }
+    console.log("la somma è dispari");
     return false;
 }
